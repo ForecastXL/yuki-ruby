@@ -33,12 +33,13 @@ describe YukiApiWrapper do
 
     end
     it "should retrieve GLTransactions" do
-      p @client.gl_account_transactions
+      opts = {GLAccountCode: '80000', StartDate: '2014-12-31 15:19:33 +0100', EndDate: '2015-12-31 15:19:33 +0100'}
+      p @client.gl_account_transactions(opts)
     end
 
     it "should retrieve GLAccountBalances" do
       p "GLAccountBalances"
-      p @client.gl_account_balance
+      p @client.gl_account_balance(transactionDate: '2015-12-31 15:19:33 +0100')
     end
   end
 end

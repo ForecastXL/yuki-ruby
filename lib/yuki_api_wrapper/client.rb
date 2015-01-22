@@ -9,6 +9,8 @@ module YukiApiWrapper
     attr_accessor :api_version
     attr_accessor :session_id
     attr_accessor :administration_id
+    attr_accessor :start_date
+    attr_accessor :end_date
 
     # https://api.yukiworks.nl/ws/Accounting.asmx
     # Administratie ForecastXL 

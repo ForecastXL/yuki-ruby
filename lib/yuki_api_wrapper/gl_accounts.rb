@@ -1,19 +1,22 @@
 module YukiApiWrapper
   class Client
-    def gl_account_balance
-
+    def gl_account_balance(opts = {})
+      required = [:transactionDate]
+      check_required_parameters(required, opts)
       # sessionID:
       # administrationID:
-      # transactionDate: -> Use end date
+      # transactionDate: -> Use end date per year
       opts = { body:
                 { sessionId: self.session_id,
                   administrationId: self.administration_id,
-                  transactionDate: '2015-12-31 15:19:33 +0100' }
+                  transactionDate: opts.fetch(:transactionDate) }
              }
       post('/GLAccountBalance', opts)
     end
 
-    def gl_account_transactions
+    def gl_account_transactions(opts = {})
+      required = [:GLAccountCode, :StartDate, :EndDate]
+      check_required_parameters(required, opts)
       # sessionID:
       # administrationID:
       # GLAccountCode:
