@@ -6,5 +6,5 @@ require 'yuki_api_wrapper/client'
 #
 # @author Laurens Nutma
 
-module Yuki
+module YukiApiWrapper
 end
