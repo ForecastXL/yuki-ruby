@@ -1,5 +1,6 @@
 require "yuki_api_wrapper/version"
 require "yuki_api_wrapper/gl_accounts"
+require "active_support/all"
 
 module YukiApiWrapper
   class Client
@@ -22,6 +23,7 @@ module YukiApiWrapper
       check_required_parameters(required, opts)
 
       @access_key = opts[:access_key]
+      self.administration_id = opts.fetch(:administration_id){ nil }
       @api_version = API_VERSION
     end
 

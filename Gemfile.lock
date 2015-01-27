@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     yuki_api_wrapper (0.0.1)
+      activesupport
       httparty
       json
       libxml-ruby
@@ -10,15 +11,23 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.1.4)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
     coderay (1.1.0)
     diff-lcs (1.2.5)
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    i18n (0.7.0)
     json (1.8.2)
     libxml-ruby (2.8.0)
     method_source (0.8.2)
     mime-types (2.4.3)
+    minitest (5.5.1)
     multi_xml (0.5.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -38,6 +47,9 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     slop (3.6.0)
+    thread_safe (0.3.4)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby

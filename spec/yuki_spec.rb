@@ -30,7 +30,6 @@ describe YukiApiWrapper do
     before do
       @client.authenticate
       @client.administration_id = @client.set_first_administration_id
-
     end
     it "should retrieve GLTransactions" do
       opts = {GLAccountCode: '80000', StartDate: '2014-12-31 15:19:33 +0100', EndDate: '2015-12-31 15:19:33 +0100'}
@@ -40,6 +39,11 @@ describe YukiApiWrapper do
     it "should retrieve GLAccountBalances" do
       p "GLAccountBalances"
       p @client.gl_account_balance(transactionDate: '2015-12-31 15:19:33 +0100')
+    end
+
+    it "should retrieve unique GLAccountBalances using the end of the year of each year in range" do
+      p "GLAccountBalances per year"
+      p @client.gl_account_balance_in_range({start_date: '2013-01-31 15:19:33 +0100' , end_date: '2015-12-31 15:19:33 +0100'})
     end
   end
 end
