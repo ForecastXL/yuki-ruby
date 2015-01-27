@@ -69,7 +69,22 @@ module YukiApiWrapper
       post('/GLAccountTransactions', opts)
     end
 
-
-
+    def gl_account_transactions_fiscal(opts = {})
+      required = [:GLAccountCode, :StartDate, :EndDate]
+      check_required_parameters(required, opts)
+      # sessionID:
+      # administrationID:
+      # GLAccountCode:
+      # StartDate:
+      # EndDate:
+      opts = { body:
+                { sessionId: self.session_id,
+                  administrationId: self.administration_id,
+                  GLAccountCode: opts.fetch(:GLAccountCode),
+                  StartDate: opts.fetch(:StartDate),
+                  EndDate: opts.fetch(:EndDate)}
+             }
+      post('/GLAccountTransactionsFiscal', opts)
+    end
   end
 end

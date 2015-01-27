@@ -34,11 +34,20 @@ module YukiApiWrapper
 
     def administrations
       opts = { body: { sessionId: self.session_id }}
-      post('/Administrations', opts)
+      response = post('/Administrations', opts)
+
+      results = []
+      unless response['Administrations'].nil?
+        response['Administrations'].each do |administration|
+          results << administration[1]
+        end
+      end
+
+      results
     end
 
     def set_first_administration_id
-      self.administration_id = self.administrations['Administrations']['Administration']['ID']
+      self.administration_id = self.administrations.first['ID']
     end
 
     def reconnect
