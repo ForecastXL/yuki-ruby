@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-describe YukiApiWrapper do
+describe Yuki do
   before do
     # p "PLS FILL IN API KEY: ......"
-    # key = STDIN.gets.chomp
-    @client = YukiApiWrapper::Client.new({access_key: "d7895de9-56ba-41be-a9a9-51e0fb699451"})
+    @client = Yuki::Client.new({ access_key: '' })
   end
 
   describe 'authentication' do
@@ -20,11 +19,8 @@ describe YukiApiWrapper do
 
     it "should retrieve available #administrations" do
       expect(@client.administrations).not_to be_empty
-      p @client.session_id
-      p @client.administrations
     end
   end
-
 
   describe 'Api calls within an administration' do
     before do
@@ -32,18 +28,18 @@ describe YukiApiWrapper do
       @client.administration_id = @client.set_first_administration_id
     end
     it "should retrieve GLTransactions" do
-      opts = {GLAccountCode: '80000', StartDate: '2014-12-31 15:19:33 +0100', EndDate: '2015-12-31 15:19:33 +0100'}
+      opts = { GLAccountCode: '80000', StartDate: '2014-12-31 15:19:33 +0100', EndDate: '2015-12-31 15:19:33 +0100' }
       p @client.gl_account_transactions(opts)
     end
 
     it "should retrieve GLTransactionsFiscal" do
-      opts = {GLAccountCode: '80000', StartDate: '2014-12-31 15:19:33 +0100', EndDate: '2015-12-31 15:19:33 +0100'}
+      opts = { GLAccountCode: '80000', StartDate: '2014-12-31 15:19:33 +0100', EndDate: '2015-12-31 15:19:33 +0100' }
       p "GLTransactionsFiscal"
       p @client.gl_account_transactions(opts)
     end
 
     it "should reject empty GLTransactions hashes" do
-      opts = {GLAccountCode: '80000', StartDate: '2013-12-31 15:19:33 +0100', EndDate: '2014-12-31 15:19:33 +0100'}
+      opts = { GLAccountCode: '80000', StartDate: '2013-12-31 15:19:33 +0100', EndDate: '2014-12-31 15:19:33 +0100' }
       p @client.gl_account_transactions(opts)
     end
 

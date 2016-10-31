@@ -1,4 +1,4 @@
-Copyright (c) 2014 Laurens Nutma
+Copyright (c) 2016 ForecastXL
 
 MIT License
 

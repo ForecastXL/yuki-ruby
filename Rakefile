@@ -1,4 +1,4 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
 task :console do
   require 'pry'
@@ -6,11 +6,10 @@ task :console do
 
   def reload!
     # Change 'gem_name' here too:
-    files = $LOADED_FEATURES.select { |feat| feat =~ /\/yuki_api_wrapper\// }
+    files = $LOADED_FEATURES.select { |feat| feat =~ /\/yuki-ruby\// }
     files.each { |file| load file }
   end
 
   ARGV.clear
   Pry.start
 end
-
