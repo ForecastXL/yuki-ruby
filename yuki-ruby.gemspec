@@ -18,9 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'httparty'
-  spec.add_dependency 'libxml-ruby'
   spec.add_dependency 'json'
-  spec.add_dependency 'mime-types'
   spec.add_dependency 'activesupport'
 
   # Testing

@@ -9,6 +9,7 @@ module Yuki
                   administrationId: administration_id,
                   transactionDate: opts.fetch(:transactionDate) }
              }
+
       post('/GLAccountBalance', opts)
     end
 

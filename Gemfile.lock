@@ -5,8 +5,6 @@ PATH
       activesupport
       httparty
       json
-      libxml-ruby
-      mime-types
 
 GEM
   remote: https://rubygems.org/
@@ -23,11 +21,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (2.0.2)
-    libxml-ruby (2.9.0)
     method_source (0.8.2)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
     minitest (5.9.1)
     multi_xml (0.5.5)
     pry (0.10.4)
@@ -64,4 +58,4 @@ DEPENDENCIES
   yuki-ruby!
 
 BUNDLED WITH
-   1.13.2
+   1.13.6
